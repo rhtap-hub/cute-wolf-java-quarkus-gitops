@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: cute-wolf-java-quarkus 
+  janus-idp.io/tekton: cute-wolf-java-quarkus
+  backstage.io/kubernetes-id: cute-wolf-java-quarkus
+  backstage.io/kubernetes-namespace: rhtap-dmo 
+  app.kubernetes.io/part-of: cute-wolf-java-quarkus
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  

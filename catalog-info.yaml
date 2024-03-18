@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cute-wolf-java-quarkus-gitops
+  description: This is GitOps manifest for cute-wolf-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: cute-wolf-java-quarkus
+    janus-idp.io/tekton: cute-wolf-java-quarkus 
+    backstage.io/kubernetes-id: cute-wolf-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cute-wolf-java-quarkus
